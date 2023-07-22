@@ -17,18 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N3S-ip-Fy5">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N3S-ip-Fy5">
                                 <rect key="frame" x="0.0" y="59" width="393" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XAL-HJ-ghM">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XAL-HJ-ghM">
                                     <size key="itemSize" width="392" height="585"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KsP-9V-Bu0">
-                                        <rect key="frame" x="0.66666666666666663" y="0.0" width="392" height="585"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCell" id="KsP-9V-Bu0" customClass="OnboardingCollectionViewCell" customModule="Foodie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="19" width="392" height="585"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UBv-fC-jV9">
                                             <rect key="frame" x="0.0" y="0.0" width="392" height="585"/>
@@ -41,18 +41,26 @@
                                                     <rect key="frame" x="16" y="454" width="360" height="115"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Delivery At Your Doorstep" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeQ-mq-mta">
-                                                            <rect key="frame" x="73.333333333333329" y="0.0" width="213.33333333333337" height="67.666666666666671"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="360" height="67.666666666666671"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Delivery and Online reservation System for cafes and resturants" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucy-VF-Oam">
-                                                            <rect key="frame" x="11.666666666666657" y="83.666666666666629" width="337" height="31.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="83.666666666666629" width="360" height="31.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="FeQ-mq-mta" firstAttribute="top" secondItem="8AW-UP-iHY" secondAttribute="top" id="I0q-vT-8rr"/>
+                                                        <constraint firstItem="FeQ-mq-mta" firstAttribute="top" secondItem="8AW-UP-iHY" secondAttribute="top" id="NaR-ps-KGj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ucy-VF-Oam" secondAttribute="trailing" id="PAE-eR-72e"/>
+                                                        <constraint firstAttribute="trailing" secondItem="FeQ-mq-mta" secondAttribute="trailing" id="c7H-EQ-VQ3"/>
+                                                        <constraint firstItem="FeQ-mq-mta" firstAttribute="leading" secondItem="8AW-UP-iHY" secondAttribute="leading" id="fBW-Fy-x3y"/>
+                                                        <constraint firstItem="ucy-VF-Oam" firstAttribute="leading" secondItem="8AW-UP-iHY" secondAttribute="leading" id="qmc-VG-e50"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -67,6 +75,11 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="392" height="585"/>
+                                        <connections>
+                                            <outlet property="slideDescriptionLabel" destination="ucy-VF-Oam" id="cbk-ob-mIQ"/>
+                                            <outlet property="slideImageView" destination="fXW-wj-oAg" id="iP4-hO-IBF"/>
+                                            <outlet property="slideTitleLabel" destination="FeQ-mq-mta" id="w5z-6o-d6k"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
