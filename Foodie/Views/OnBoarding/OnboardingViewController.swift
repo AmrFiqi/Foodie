@@ -48,7 +48,10 @@ class OnboardingViewController: UIViewController {
     
     @IBAction func nextButtonClicked(_ sender: Any) {
         if currentPage == slides.count - 1 {
-            print("Next Screen")
+            let nextVC = storyboard?.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .flipHorizontal
+            present(nextVC, animated: true)
         }
         else {
             currentPage += 1
@@ -81,6 +84,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         collectionView.delegate = self
         collectionView.dataSource = self
         pageControl.isUserInteractionEnabled = false
+        pageControl.numberOfPages = slides.count
     }
 }
 
