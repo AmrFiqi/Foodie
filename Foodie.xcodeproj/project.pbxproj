@@ -17,6 +17,9 @@
 		E5502B012A6BE40300A76B71 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5502B002A6BE40200A76B71 /* OnboardingModel.swift */; };
 		E5502B032A6BE65900A76B71 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5502B022A6BE65900A76B71 /* OnboardingCollectionViewCell.swift */; };
 		E5EBA4842A6D5CC3008C629A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4832A6D5CC3008C629A /* HomeViewController.swift */; };
+		E5EBA4892A6D63A1008C629A /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4872A6D63A1008C629A /* CategoryCollectionViewCell.swift */; };
+		E5EBA48A2A6D63A1008C629A /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5EBA4882A6D63A1008C629A /* CategoryCollectionViewCell.xib */; };
+		E5EBA48C2A6D649C008C629A /* DishCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA48B2A6D649C008C629A /* DishCategoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		E5502B002A6BE40200A76B71 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		E5502B022A6BE65900A76B71 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E5EBA4832A6D5CC3008C629A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E5EBA4872A6D63A1008C629A /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E5EBA4882A6D63A1008C629A /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		E5EBA48B2A6D649C008C629A /* DishCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				E5502B002A6BE40200A76B71 /* OnboardingModel.swift */,
+				E5EBA48B2A6D649C008C629A /* DishCategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 		E5502AF92A6BE0B800A76B71 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				E5EBA4852A6D6372008C629A /* CollectionViewCell */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -125,6 +133,23 @@
 				E5EBA4832A6D5CC3008C629A /* HomeViewController.swift */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		E5EBA4852A6D6372008C629A /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5EBA4862A6D6381008C629A /* CategoryCollectionViewCell */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E5EBA4862A6D6381008C629A /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5EBA4872A6D63A1008C629A /* CategoryCollectionViewCell.swift */,
+				E5EBA4882A6D63A1008C629A /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EBA48A2A6D63A1008C629A /* CategoryCollectionViewCell.xib in Resources */,
 				E5502AF02A6BD4A500A76B71 /* LaunchScreen.storyboard in Resources */,
 				E5502AED2A6BD4A500A76B71 /* Assets.xcassets in Resources */,
 				E5502AEB2A6BD4A300A76B71 /* Main.storyboard in Resources */,
@@ -198,7 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EBA4892A6D63A1008C629A /* CategoryCollectionViewCell.swift in Sources */,
 				E5502AE42A6BD4A300A76B71 /* AppDelegate.swift in Sources */,
+				E5EBA48C2A6D649C008C629A /* DishCategoryModel.swift in Sources */,
 				E5502B012A6BE40300A76B71 /* OnboardingModel.swift in Sources */,
 				E5502AE62A6BD4A300A76B71 /* SceneDelegate.swift in Sources */,
 				E5502AFF2A6BE31B00A76B71 /* UIView+Extension.swift in Sources */,
