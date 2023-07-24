@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CategoryCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Variables
+    
+    static let identifier = String(describing: CategoryCollectionViewCell.self)
     
     // MARK: - IBOutlets
 
@@ -23,7 +28,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
 
     func setup(category: DishCategory) {
-        
+        categoryLabel.text = category.name
+        categoryImageView.kf.setImage(with: category.image.asUrl)
     }
     
     
