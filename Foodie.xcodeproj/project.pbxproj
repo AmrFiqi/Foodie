@@ -26,6 +26,7 @@
 		E5EBA4962A6EE52F008C629A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4952A6EE52F008C629A /* CardView.swift */; };
 		E5EBA49A2A700EA4008C629A /* PopularDishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4982A700EA4008C629A /* PopularDishCollectionViewCell.swift */; };
 		E5EBA49B2A700EA4008C629A /* PopularDishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5EBA4992A700EA4008C629A /* PopularDishCollectionViewCell.xib */; };
+		E5EBA49D2A701074008C629A /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA49C2A701074008C629A /* DishModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		E5EBA4952A6EE52F008C629A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E5EBA4982A700EA4008C629A /* PopularDishCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishCollectionViewCell.swift; sourceTree = "<group>"; };
 		E5EBA4992A700EA4008C629A /* PopularDishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDishCollectionViewCell.xib; sourceTree = "<group>"; };
+		E5EBA49C2A701074008C629A /* DishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				E5502B002A6BE40200A76B71 /* OnboardingModel.swift */,
 				E5EBA48B2A6D649C008C629A /* DishCategoryModel.swift */,
+				E5EBA49C2A701074008C629A /* DishModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				E5502AFC2A6BE0F100A76B71 /* OnboardingViewController.swift in Sources */,
 				E5EBA4842A6D5CC3008C629A /* HomeViewController.swift in Sources */,
 				E5EBA4912A6EBDEE008C629A /* String+Extension.swift in Sources */,
+				E5EBA49D2A701074008C629A /* DishModel.swift in Sources */,
 				E5EBA4962A6EE52F008C629A /* CardView.swift in Sources */,
 				E5502B032A6BE65900A76B71 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
