@@ -27,6 +27,7 @@
 		E5EBA49A2A700EA4008C629A /* PopularDishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4982A700EA4008C629A /* PopularDishCollectionViewCell.swift */; };
 		E5EBA49B2A700EA4008C629A /* PopularDishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5EBA4992A700EA4008C629A /* PopularDishCollectionViewCell.xib */; };
 		E5EBA49D2A701074008C629A /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA49C2A701074008C629A /* DishModel.swift */; };
+		E5EBA49F2A7023D1008C629A /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA49E2A7023D1008C629A /* HomeViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		E5EBA4982A700EA4008C629A /* PopularDishCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishCollectionViewCell.swift; sourceTree = "<group>"; };
 		E5EBA4992A700EA4008C629A /* PopularDishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDishCollectionViewCell.xib; sourceTree = "<group>"; };
 		E5EBA49C2A701074008C629A /* DishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
+		E5EBA49E2A7023D1008C629A /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				E5EBA4832A6D5CC3008C629A /* HomeViewController.swift */,
+				E5EBA49E2A7023D1008C629A /* HomeViewController+Extension.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				E5502AE42A6BD4A300A76B71 /* AppDelegate.swift in Sources */,
 				E5EBA48C2A6D649C008C629A /* DishCategoryModel.swift in Sources */,
 				E5502B012A6BE40300A76B71 /* OnboardingModel.swift in Sources */,
+				E5EBA49F2A7023D1008C629A /* HomeViewController+Extension.swift in Sources */,
 				E5502AE62A6BD4A300A76B71 /* SceneDelegate.swift in Sources */,
 				E5EBA49A2A700EA4008C629A /* PopularDishCollectionViewCell.swift in Sources */,
 				E5502AFF2A6BE31B00A76B71 /* UIView+Extension.swift in Sources */,

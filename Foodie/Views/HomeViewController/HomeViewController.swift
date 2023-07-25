@@ -19,6 +19,12 @@ class HomeViewController: UIViewController {
         .init(id: "id1", name: "Africa Dish 5", image: "https://piscsum.photos/100/200"),
     ]
     
+    var popularDishes: [Dish] = [
+        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234.634),
+        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234.634),
+        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234.634),
+        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234.634),
+    ]
     // MARK: - IBOutlets
     
     @IBOutlet weak var popularCollectionView: UICollectionView!
@@ -28,13 +34,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupHomeViewController()
         setupCollectionView()
         registerCells()
     }
     
-
+    
     func setupHomeViewController() {
         title = "Foodie"
         let cartButton = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .plain, target: self, action: #selector(cartButtonClicked))
@@ -42,36 +48,18 @@ class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItem = cartButton
     }
     
+    private func registerCells() {
+        categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        popularCollectionView.register(UINib(nibName: PopularDishCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PopularDishCollectionViewCell.identifier)
+    }
+        
+    
     // MARK: - Actions
     
     @objc func cartButtonClicked() {
         
     }
     
-
-}
-
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
-        cell.setup(category: categories[indexPath.row])
-        return cell
-    }
-    
-    func setupCollectionView() {
-        categoryCollectionView.delegate = self
-        categoryCollectionView.dataSource = self
-    }
-    
-    private func registerCells() {
-        categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
-        popularCollectionView.register(UINib(nibName: PopularDishCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: PopularDishCollectionViewCell.identifier)
-    }
     
 }
-
 

@@ -12,6 +12,6 @@ struct Dish {
     let calories: Double?
     
     var formattedCalories: String {
-        return String(format: "%.02f", calories ?? 0)
+        return String(format: "%.02f Calories", calories ?? 0)
     }
 }
