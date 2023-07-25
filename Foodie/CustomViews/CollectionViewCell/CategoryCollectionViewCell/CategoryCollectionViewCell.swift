@@ -20,12 +20,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryImageView: UIImageView!
     
     // MARK: - Class Methods
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-    }
 
     func setup(category: DishCategory) {
         categoryLabel.text = category.name

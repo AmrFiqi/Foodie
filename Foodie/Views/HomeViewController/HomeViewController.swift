@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     // MARK: -  Class Methods
@@ -68,6 +69,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     private func registerCells() {
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        popularCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
     }
     
 }

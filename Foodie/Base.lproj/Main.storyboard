@@ -168,7 +168,7 @@
                                                             <size key="itemSize" width="128" height="128"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="30" minY="0.0" maxX="10" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="20" minY="0.0" maxX="40" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells/>
                                                     </collectionView>
@@ -209,6 +209,10 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="J7z-oP-Kce" id="A8h-KY-YN7"/>
+                                                            <outlet property="delegate" destination="J7z-oP-Kce" id="DDm-pR-MeJ"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -288,6 +292,7 @@
                     <navigationItem key="navigationItem" id="Atg-qq-vhM"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="kif-62-A6m" id="z9V-O8-pC0"/>
+                        <outlet property="popularCollectionView" destination="eim-je-Ahe" id="18d-RC-rfs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwh-zi-hdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
