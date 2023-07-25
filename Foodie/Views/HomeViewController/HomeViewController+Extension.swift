@@ -14,6 +14,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return categories.count
         case popularCollectionView:
             return popularDishes.count
+        case chefCollectionView:
+            return chefDishs.count
         default:
             return 0
         }
@@ -30,6 +32,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularDishCollectionViewCell.identifier, for: indexPath) as! PopularDishCollectionViewCell
             cell.setup(dish: popularDishes[indexPath.row])
             return cell
+        case chefCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChefCollectionViewCell.identifier, for: indexPath) as! ChefCollectionViewCell
+            cell.setup(dish: chefDishs[indexPath.row])
+            return cell
         default:
             return UICollectionViewCell()
         }
@@ -39,6 +45,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func setupCollectionView() {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
+        chefCollectionView.delegate = self
+        chefCollectionView.dataSource = self
     }
     
 

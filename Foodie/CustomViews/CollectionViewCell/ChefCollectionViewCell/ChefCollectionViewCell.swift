@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ChefCollectionViewCell: UICollectionViewCell {
     
@@ -22,5 +23,10 @@ class ChefCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Class Methods
     
-    
+    func setup(dish: Dish) {
+        dishImageView.kf.setImage(with: dish.image?.asUrl)
+        titleLabel.text = dish.name
+        descriptionLabel.text = dish.description
+        caloriesLabel.text = dish.formattedCalories
+    }
 }
