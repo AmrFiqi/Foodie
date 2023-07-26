@@ -35,6 +35,7 @@
 		E5EBA4AB2A71ADFE008C629A /* UINavigationController+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4AA2A71ADFE008C629A /* UINavigationController+Extentsion.swift */; };
 		E5EBA4B02A71BFCD008C629A /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4AE2A71BFCD008C629A /* DishListTableViewCell.swift */; };
 		E5EBA4B12A71BFCD008C629A /* DishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5EBA4AF2A71BFCD008C629A /* DishListTableViewCell.xib */; };
+		E5EBA4B42A71C318008C629A /* ListDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4B32A71C318008C629A /* ListDishesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		E5EBA4AA2A71ADFE008C629A /* UINavigationController+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extentsion.swift"; sourceTree = "<group>"; };
 		E5EBA4AE2A71BFCD008C629A /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
 		E5EBA4AF2A71BFCD008C629A /* DishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListTableViewCell.xib; sourceTree = "<group>"; };
+		E5EBA4B32A71C318008C629A /* ListDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		E5502AF82A6BE0A700A76B71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E5EBA4B22A71C2FD008C629A /* ListDishesViewController */,
 				E5EBA4A52A71AA39008C629A /* DishDetailViewController */,
 				E5EBA4822A6D5CA7008C629A /* HomeViewController */,
 				E5502AFA2A6BE0C900A76B71 /* OnBoarding */,
@@ -244,6 +247,14 @@
 			path = DishListTableViewCell;
 			sourceTree = "<group>";
 		};
+		E5EBA4B22A71C2FD008C629A /* ListDishesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E5EBA4B32A71C318008C629A /* ListDishesViewController.swift */,
+			);
+			path = ListDishesViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,6 +350,7 @@
 				E5EBA4A72A71AA52008C629A /* DishDetailViewController.swift in Sources */,
 				E5EBA49A2A700EA4008C629A /* PopularDishCollectionViewCell.swift in Sources */,
 				E5502AFF2A6BE31B00A76B71 /* UIView+Extension.swift in Sources */,
+				E5EBA4B42A71C318008C629A /* ListDishesViewController.swift in Sources */,
 				E5502AFC2A6BE0F100A76B71 /* OnboardingViewController.swift in Sources */,
 				E5EBA4842A6D5CC3008C629A /* HomeViewController.swift in Sources */,
 				E5EBA4912A6EBDEE008C629A /* String+Extension.swift in Sources */,

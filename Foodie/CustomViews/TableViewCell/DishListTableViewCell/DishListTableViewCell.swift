@@ -9,6 +9,10 @@ import UIKit
 import Kingfisher
 
 class DishListTableViewCell: UITableViewCell {
+    
+    // MARK: - Variable
+    
+    static let identifier = String(describing: DishListTableViewCell.self)
 
     // MARK: - IBOutlets
     

@@ -45,7 +45,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == categoryCollectionView {
-            // Do something
+            let controller = ListDishesViewController.instanciate()
+            controller.category = categories[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
         } else {
             /// Create an instance of DishDetailViewController from the storyboard
             let controller = DishDetailViewController.instanciate()
