@@ -53,9 +53,9 @@ class HomeViewController: UIViewController {
     
     func setupHomeViewController() {
         title = "Foodie"
-        let cartButton = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .plain, target: self, action: #selector(cartButtonClicked))
-        cartButton.tintColor = .red
-        navigationItem.rightBarButtonItem = cartButton
+//        let cartButton = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .plain, target: self, action: #selector(cartButtonClicked))
+//        cartButton.tintColor = .red
+//        navigationItem.rightBarButtonItem = cartButton
     }
     
     private func registerCells() {
@@ -67,9 +67,9 @@ class HomeViewController: UIViewController {
     
     // MARK: - Actions
     
-    @objc func cartButtonClicked() {
-        
-    }
+//    @objc func cartButtonClicked() {
+//
+//    }
     
     
 }

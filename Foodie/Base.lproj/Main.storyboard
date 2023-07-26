@@ -132,6 +132,42 @@
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="-2.1126760563380285"/>
         </scene>
+        <!--Order List View Controller-->
+        <scene sceneID="2iP-ah-7I2">
+            <objects>
+                <viewController storyboardIdentifier="OrderListViewController" id="lHZ-NC-Xlf" customClass="OrderListViewController" customModule="Foodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iUG-lJ-TQt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Je-aD-KwD">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lHZ-NC-Xlf" id="4Qh-am-hk0"/>
+                                    <outlet property="delegate" destination="lHZ-NC-Xlf" id="6mU-fG-y7p"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Op-oF-RUy"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Je-aD-KwD" firstAttribute="leading" secondItem="7Op-oF-RUy" secondAttribute="leading" id="1PX-d3-GXP"/>
+                            <constraint firstItem="3Je-aD-KwD" firstAttribute="top" secondItem="7Op-oF-RUy" secondAttribute="top" id="8FQ-mI-Mo8"/>
+                            <constraint firstAttribute="bottom" secondItem="3Je-aD-KwD" secondAttribute="bottom" id="E1Y-cA-Bsf"/>
+                            <constraint firstItem="3Je-aD-KwD" firstAttribute="trailing" secondItem="7Op-oF-RUy" secondAttribute="trailing" id="Rlb-Wp-zgh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1bz-3J-ShY"/>
+                    <connections>
+                        <outlet property="orderListTableView" destination="3Je-aD-KwD" id="X2U-76-1VY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcB-DX-AaJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2910.6870229007632" y="683.80281690140851"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="wIV-gT-PLc">
             <objects>
@@ -289,7 +325,14 @@
                             <constraint firstItem="qlP-6N-PIF" firstAttribute="leading" secondItem="Lu7-GV-P9k" secondAttribute="leading" id="yjO-kw-L2H"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Atg-qq-vhM"/>
+                    <navigationItem key="navigationItem" id="Atg-qq-vhM">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart.circle.fill" catalog="system" id="q3O-ju-hSJ">
+                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="lHZ-NC-Xlf" kind="show" id="ZjQ-mg-mja"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryCollectionView" destination="kif-62-A6m" id="z9V-O8-pC0"/>
                         <outlet property="chefCollectionView" destination="e8H-0n-928" id="ajf-aE-nx8"/>
@@ -465,6 +508,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
