@@ -308,11 +308,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-kj-qSV">
-                                <rect key="frame" x="0.0" y="59" width="393" height="514"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-kj-qSV">
+                                <rect key="frame" x="0.0" y="59" width="393" height="515"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4mn-UJ-cJa">
-                                <rect key="frame" x="16" y="589" width="361" height="213"/>
+                                <rect key="frame" x="16" y="590" width="361" height="212"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sqf-NS-KsC">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
@@ -333,22 +333,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Sqf-NS-KsC" secondAttribute="height" multiplier="361:24" id="EDX-Z0-Ce2"/>
+                                        </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob0-e8-GTv">
-                                        <rect key="frame" x="0.0" y="40" width="361" height="41"/>
+                                        <rect key="frame" x="0.0" y="40" width="361" height="40"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Labelalbelabalbalabalbalablablablalbalblalbalblalalballablablabalba">
                                                 <attributes>
-                                                    <color key="NSColor" systemColor="systemGrayColor"/>
+                                                    <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <font key="NSFont" metaFont="system" size="15"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ge-Tj-455">
-                                        <rect key="frame" x="0.0" y="97" width="361" height="50"/>
+                                        <rect key="frame" x="0.0" y="96" width="361" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GEZ-2c-KFi"/>
                                         </constraints>
@@ -356,7 +359,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE6-0U-HL2">
-                                        <rect key="frame" x="0.0" y="163" width="361" height="50"/>
+                                        <rect key="frame" x="0.0" y="162" width="361" height="50"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Pev-3F-BEx"/>
@@ -375,6 +378,12 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="ob0-e8-GTv" firstAttribute="top" secondItem="Sqf-NS-KsC" secondAttribute="bottom" constant="16" id="2Dy-iK-Ofu"/>
+                                    <constraint firstAttribute="trailing" secondItem="ob0-e8-GTv" secondAttribute="trailing" id="OxG-PV-zVM"/>
+                                    <constraint firstItem="0ge-Tj-455" firstAttribute="top" secondItem="ob0-e8-GTv" secondAttribute="bottom" constant="16" id="jcW-BB-8Zi"/>
+                                    <constraint firstItem="ob0-e8-GTv" firstAttribute="leading" secondItem="4mn-UJ-cJa" secondAttribute="leading" id="o5I-j4-ryf"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tdY-vo-bs5"/>
@@ -426,9 +435,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

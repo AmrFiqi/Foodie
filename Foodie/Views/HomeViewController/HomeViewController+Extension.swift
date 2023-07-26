@@ -43,12 +43,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if collectionView == categoryCollectionView {
-            
-        }
-        else {
+            // Do something
+        } else {
+            /// Create an instance of DishDetailViewController from the storyboard
             let controller = DishDetailViewController.instanciate()
             
+            /// Determine the selected dish based on the collection view and set the dish property of the DishDetailViewController
+            if collectionView == popularCollectionView {
+                controller.dish = popularDishes[indexPath.row]
+            } else if collectionView == chefCollectionView {
+                controller.dish = chefDishs[indexPath.row]
+            }
+            
+            /// Push the DishDetailViewController onto the navigation stack to display the details of the selected dish
             navigationController?.pushViewController(controller, animated: true)
         }
     }
