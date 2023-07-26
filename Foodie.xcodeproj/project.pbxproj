@@ -31,6 +31,8 @@
 		E5EBA4A32A702B5A008C629A /* ChefCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4A12A702B5A008C629A /* ChefCollectionViewCell.swift */; };
 		E5EBA4A42A702B5A008C629A /* ChefCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5EBA4A22A702B5A008C629A /* ChefCollectionViewCell.xib */; };
 		E5EBA4A72A71AA52008C629A /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4A62A71AA52008C629A /* DishDetailViewController.swift */; };
+		E5EBA4A92A71AB68008C629A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4A82A71AB68008C629A /* UIViewController+Extensions.swift */; };
+		E5EBA4AB2A71ADFE008C629A /* UINavigationController+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4AA2A71ADFE008C629A /* UINavigationController+Extentsion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		E5EBA4A12A702B5A008C629A /* ChefCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefCollectionViewCell.swift; sourceTree = "<group>"; };
 		E5EBA4A22A702B5A008C629A /* ChefCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefCollectionViewCell.xib; sourceTree = "<group>"; };
 		E5EBA4A62A71AA52008C629A /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
+		E5EBA4A82A71AB68008C629A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E5EBA4AA2A71ADFE008C629A /* UINavigationController+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extentsion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 				E5502AFE2A6BE31B00A76B71 /* UIView+Extension.swift */,
 				E5EBA4902A6EBDEE008C629A /* String+Extension.swift */,
 				E5EBA4922A6EE47F008C629A /* Constants.swift */,
+				E5EBA4A82A71AB68008C629A /* UIViewController+Extensions.swift */,
+				E5EBA4AA2A71ADFE008C629A /* UINavigationController+Extentsion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,10 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EBA4AB2A71ADFE008C629A /* UINavigationController+Extentsion.swift in Sources */,
 				E5EBA4892A6D63A1008C629A /* CategoryCollectionViewCell.swift in Sources */,
 				E5EBA4932A6EE47F008C629A /* Constants.swift in Sources */,
 				E5502AE42A6BD4A300A76B71 /* AppDelegate.swift in Sources */,
 				E5EBA48C2A6D649C008C629A /* DishCategoryModel.swift in Sources */,
+				E5EBA4A92A71AB68008C629A /* UIViewController+Extensions.swift in Sources */,
 				E5EBA4A32A702B5A008C629A /* ChefCollectionViewCell.swift in Sources */,
 				E5502B012A6BE40300A76B71 /* OnboardingModel.swift in Sources */,
 				E5EBA49F2A7023D1008C629A /* HomeViewController+Extension.swift in Sources */,

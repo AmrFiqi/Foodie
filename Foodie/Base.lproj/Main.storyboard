@@ -370,6 +370,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="orderButtonClicked:" destination="DrJ-5E-liM" eventType="touchUpInside" id="zYi-WT-FIG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -386,6 +389,13 @@
                             <constraint firstItem="tdY-vo-bs5" firstAttribute="bottom" secondItem="4mn-UJ-cJa" secondAttribute="bottom" constant="16" id="z0k-pR-v5a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="MT6-R6-vnH" id="n7l-1H-Gw7"/>
+                        <outlet property="descriptionLabel" destination="ob0-e8-GTv" id="3sl-eU-UCn"/>
+                        <outlet property="dishImageView" destination="ebv-kj-qSV" id="z5t-gM-pu7"/>
+                        <outlet property="nameTextField" destination="0ge-Tj-455" id="lQZ-u7-CdB"/>
+                        <outlet property="titleLabel" destination="xLi-Gh-CIx" id="KFg-RI-wSW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ps-3v-Eoe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

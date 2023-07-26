@@ -42,6 +42,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == categoryCollectionView {
+            
+        }
+        else {
+            let controller = DishDetailViewController.instanciate()
+            
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     func setupCollectionView() {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
