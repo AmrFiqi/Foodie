@@ -51,5 +51,9 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = DishDetailViewController.instanciate()
+        controller.dish = orders[indexPath.row].dish
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4tp-Yz-vVe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -159,7 +159,9 @@
                             <constraint firstItem="3Je-aD-KwD" firstAttribute="trailing" secondItem="7Op-oF-RUy" secondAttribute="trailing" id="Rlb-Wp-zgh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1bz-3J-ShY"/>
+                    <navigationItem key="navigationItem" id="1bz-3J-ShY">
+                        <barButtonItem key="backBarButtonItem" title=" " id="3qs-MC-VcJ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="orderListTableView" destination="3Je-aD-KwD" id="X2U-76-1VY"/>
                     </connections>
