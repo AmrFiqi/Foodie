@@ -40,10 +40,6 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView()
-        let service = NetworkingService()
-        let request = service.createRequest(route: .temp, method: .post, paramteres: ["firstName": "Amr", "lastName": "Tolba"])
-        print("The URL is \(request?.url)")
-        print("The body: \(request?.httpBody)")
     }
     
     

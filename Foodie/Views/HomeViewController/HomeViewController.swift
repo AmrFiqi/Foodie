@@ -48,6 +48,7 @@ class HomeViewController: UIViewController {
         setupHomeViewController()
         setupCollectionView()
         registerCells()
+        NetworkingService.shared.myFirstRequest()
     }
     
     
