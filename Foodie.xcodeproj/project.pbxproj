@@ -145,7 +145,7 @@
 				E5EBA4B22A71C2FD008C629A /* ListDishesViewController */,
 				E5EBA4A52A71AA39008C629A /* DishDetailViewController */,
 				E5EBA4822A6D5CA7008C629A /* HomeViewController */,
-				E5502AFA2A6BE0C900A76B71 /* OnBoarding */,
+				E5502AFA2A6BE0C900A76B71 /* OnBoardingViewController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,13 +160,13 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		E5502AFA2A6BE0C900A76B71 /* OnBoarding */ = {
+		E5502AFA2A6BE0C900A76B71 /* OnBoardingViewController */ = {
 			isa = PBXGroup;
 			children = (
 				E5502AFB2A6BE0F100A76B71 /* OnboardingViewController.swift */,
 				E5502B022A6BE65900A76B71 /* OnboardingCollectionViewCell.swift */,
 			);
-			path = OnBoarding;
+			path = OnBoardingViewController;
 			sourceTree = "<group>";
 		};
 		E5502AFD2A6BE2FA00A76B71 /* Extensions */ = {
