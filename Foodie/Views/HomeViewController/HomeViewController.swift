@@ -6,33 +6,18 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
     
     // MARK: - Variables
     
-    var categories: [DishCategory]  = [
-        .init(id: "id1", name: "Africa Dish 1", image: "https://media.gettyimages.com/id/142836999/photo/overhead-of-turkey-meal-on-plate.jpg?s=612x612&w=gi&k=20&c=3NTcPOexfQUBmpPm4wn3LjNKKOvns8VOhyBUbPrmmnc="),
-        .init(id: "id1", name: "Africa Dish 2", image: "https://media.gettyimages.com/id/142836999/photo/overhead-of-turkey-meal-on-plate.jpg?s=612x612&w=gi&k=20&c=3NTcPOexfQUBmpPm4wn3LjNKKOvns8VOhyBUbPrmmnc="),
-        .init(id: "id1", name: "Africa Dish 3", image: "https://media.gettyimages.com/id/142836999/photo/overhead-of-turkey-meal-on-plate.jpg?s=612x612&w=gi&k=20&c=3NTcPOexfQUBmpPm4wn3LjNKKOvns8VOhyBUbPrmmnc="),
-        .init(id: "id1", name: "Africa Dish 4", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"),
-        .init(id: "id1", name: "Africa Dish 5", image: "https://media.gettyimages.com/id/142836999/photo/overhead-of-turkey-meal-on-plate.jpg?s=612x612&w=gi&k=20&c=3NTcPOexfQUBmpPm4wn3LjNKKOvns8VOhyBUbPrmmnc="),
-    ]
+    var categories: [DishCategory]  = []
     
     var popularDishes: [Dish] = [
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.his is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.his is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.his is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.his is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
     ]
     
     var chefDishs: [Dish] = [
-        .init(id: "id1", name: "Garri", description: "Yummi!", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
     ]
     // MARK: - IBOutlets
     
@@ -48,7 +33,22 @@ class HomeViewController: UIViewController {
         setupHomeViewController()
         setupCollectionView()
         registerCells()
-        NetworkingService.shared.myFirstRequest()
+        NetworkingService.shared.fetchAllCategories { [weak self] (result) in
+            switch result {
+            case .success(let allDishes):
+                ProgressHUD.dismiss()
+                self?.categories = allDishes.categories ?? []
+                self?.popularDishes = allDishes.populars ?? []
+                self?.chefDishs = allDishes.specials ?? []
+                
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.chefCollectionView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+                
+            }
+        }
     }
     
     

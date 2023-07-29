@@ -43,6 +43,8 @@
 		E5EBA4C12A7545CB008C629A /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4C02A7545CB008C629A /* Method.swift */; };
 		E5EBA4C32A756F8E008C629A /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4C22A756F8E008C629A /* AppError.swift */; };
 		E5EBA4C52A75742A008C629A /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4C42A75742A008C629A /* APIResponse.swift */; };
+		E5EBA4C72A757F40008C629A /* AllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4C62A757F40008C629A /* AllDishes.swift */; };
+		E5EBA4CA2A7586D1008C629A /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E5EBA4C92A7586D1008C629A /* ProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,7 @@
 		E5EBA4C02A7545CB008C629A /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		E5EBA4C22A756F8E008C629A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		E5EBA4C42A75742A008C629A /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		E5EBA4C62A757F40008C629A /* AllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5EBA48F2A6EBD1E008C629A /* Kingfisher in Frameworks */,
+				E5EBA4CA2A7586D1008C629A /* ProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +142,7 @@
 				E5EBA48B2A6D649C008C629A /* DishCategoryModel.swift */,
 				E5EBA49C2A701074008C629A /* DishModel.swift */,
 				E5EBA4B82A71CD50008C629A /* OrderModel.swift */,
+				E5EBA4C62A757F40008C629A /* AllDishes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 			name = Foodie;
 			packageProductDependencies = (
 				E5EBA48E2A6EBD1E008C629A /* Kingfisher */,
+				E5EBA4C92A7586D1008C629A /* ProgressHUD */,
 			);
 			productName = Foodie;
 			productReference = E5502AE02A6BD4A300A76B71 /* Foodie.app */;
@@ -341,6 +347,7 @@
 			mainGroup = E5502AD72A6BD4A300A76B71;
 			packageReferences = (
 				E5EBA48D2A6EBD1E008C629A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E5EBA4C82A7586D1008C629A /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = E5502AE12A6BD4A300A76B71 /* Products */;
 			projectDirPath = "";
@@ -393,6 +400,7 @@
 				E5502AFF2A6BE31B00A76B71 /* UIView+Extension.swift in Sources */,
 				E5EBA4B42A71C318008C629A /* ListDishesViewController.swift in Sources */,
 				E5502AFC2A6BE0F100A76B71 /* OnboardingViewController.swift in Sources */,
+				E5EBA4C72A757F40008C629A /* AllDishes.swift in Sources */,
 				E5EBA4C32A756F8E008C629A /* AppError.swift in Sources */,
 				E5EBA4C52A75742A008C629A /* APIResponse.swift in Sources */,
 				E5EBA4842A6D5CC3008C629A /* HomeViewController.swift in Sources */,
@@ -628,6 +636,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		E5EBA4C82A7586D1008C629A /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -635,6 +651,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E5EBA48D2A6EBD1E008C629A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		E5EBA4C92A7586D1008C629A /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5EBA4C82A7586D1008C629A /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

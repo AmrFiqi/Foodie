@@ -13,42 +13,41 @@ struct NetworkingService {
     static let shared = NetworkingService()
     private init() {}
     
-    
-    func myFirstRequest() {
-        request(route: .temp, method: .get, type: String.self) { _ in }
+
+    func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
+        request(route: .fetchAllCategories, method: .get, completion: completion)
     }
     
-    private func request<T: Codable>(route: Route,
+    private func request<T: Decodable>(route: Route,
                                      method: Method,
                                      parameters: [String: Any]? = nil,
-                                     type: T.Type,
-                                     completion: (Result<T, Error>) -> Void) {
-        
+                                     completion: @escaping(Result<T, Error>) -> Void) {
         guard let request = createRequest(route: route, method: method, paramteres: parameters) else {
             completion(.failure(AppError.unKnownError))
             return
         }
         
-        URLSession.shared.dataTask(with: request) {
-            data, response, error in
+        URLSession.shared.dataTask(with: request) { data, response, error in
             var result: Result<Data, Error>?
             if let data = data {
                 result = .success(data)
-                let responseString = String(data: data, encoding: .utf8)  ?? "Couldn't convert data to a string"
-                print("The response is: \(responseString)")
+                let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify our data"
+                print("The response is:\n\(responseString)")
             } else if let error = error {
                 result = .failure(error)
-                print("The error is \(error.localizedDescription)")
+                print("The error is: \(error.localizedDescription)")
             }
+            
             DispatchQueue.main.async {
-                // TODO Decode the result
+                self.handleResponse(result: result, completion: completion)
             }
         }.resume()
     }
+
     
     
-    private func handleResponse<T: Decodable>(result: Result<Data, Error>?, completion: (Result<T, Error>) -> Void ) {
-        //Check if there is a result
+    private func handleResponse<T: Decodable>(result: Result<Data, Error>?,
+                                              completion: (Result<T, Error>) -> Void) {
         guard let result = result else {
             completion(.failure(AppError.unKnownError))
             return
@@ -57,12 +56,14 @@ struct NetworkingService {
         switch result {
         case .success(let data):
             let decoder = JSONDecoder()
-            guard let response  =  try? decoder.decode(ApiResponse<T>.self, from: data) else {
+            guard let response = try? decoder.decode(ApiResponse<T>.self, from: data) else {
                 completion(.failure(AppError.errorDecoding))
                 return
             }
+            
             if let error = response.error {
                 completion(.failure(AppError.serverError(error)))
+                return
             }
             
             if let decodedData = response.data {
@@ -102,4 +103,5 @@ struct NetworkingService {
         }
         return urlRequest
     }
+    
 }
