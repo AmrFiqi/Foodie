@@ -42,6 +42,7 @@
 		E5EBA4BF2A754533008C629A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4BE2A754533008C629A /* Route.swift */; };
 		E5EBA4C12A7545CB008C629A /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4C02A7545CB008C629A /* Method.swift */; };
 		E5EBA4C32A756F8E008C629A /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4C22A756F8E008C629A /* AppError.swift */; };
+		E5EBA4C52A75742A008C629A /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4C42A75742A008C629A /* APIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		E5EBA4BE2A754533008C629A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		E5EBA4C02A7545CB008C629A /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		E5EBA4C22A756F8E008C629A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		E5EBA4C42A75742A008C629A /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 				E5EBA4BE2A754533008C629A /* Route.swift */,
 				E5EBA4C02A7545CB008C629A /* Method.swift */,
 				E5EBA4C22A756F8E008C629A /* AppError.swift */,
+				E5EBA4C42A75742A008C629A /* APIResponse.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				E5EBA4B42A71C318008C629A /* ListDishesViewController.swift in Sources */,
 				E5502AFC2A6BE0F100A76B71 /* OnboardingViewController.swift in Sources */,
 				E5EBA4C32A756F8E008C629A /* AppError.swift in Sources */,
+				E5EBA4C52A75742A008C629A /* APIResponse.swift in Sources */,
 				E5EBA4842A6D5CC3008C629A /* HomeViewController.swift in Sources */,
 				E5EBA4912A6EBDEE008C629A /* String+Extension.swift in Sources */,
 				E5EBA49D2A701074008C629A /* DishModel.swift in Sources */,

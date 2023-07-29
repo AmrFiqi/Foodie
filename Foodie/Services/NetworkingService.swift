@@ -46,6 +46,34 @@ struct NetworkingService {
         }.resume()
     }
     
+    
+    private func handleResponse<T: Decodable>(result: Result<Data, Error>?, completion: (Result<T, Error>) -> Void ) {
+        //Check if there is a result
+        guard let result = result else {
+            completion(.failure(AppError.unKnownError))
+            return
+        }
+        
+        switch result {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            guard let response  =  try? decoder.decode(ApiResponse<T>.self, from: data) else {
+                completion(.failure(AppError.errorDecoding))
+                return
+            }
+            if let error = response.error {
+                completion(.failure(AppError.serverError(error)))
+            }
+            
+            if let decodedData = response.data {
+                completion(.success(decodedData))
+            } else {
+                completion(.failure(AppError.unKnownError))
+            }
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
     /// This is a function to generate urlRequest
     /// - Parameters:
     ///   - route: path to the resource in the backend
