@@ -46,6 +46,7 @@
 		E5EBA4C72A757F40008C629A /* AllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4C62A757F40008C629A /* AllDishes.swift */; };
 		E5EBA4CA2A7586D1008C629A /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E5EBA4C92A7586D1008C629A /* ProgressHUD */; };
 		E5EBA4CD2A766E72008C629A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E5EBA4CC2A766E72008C629A /* IQKeyboardManagerSwift */; };
+		E5EBA4CF2A7681D7008C629A /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBA4CE2A7681D7008C629A /* UserDefaults+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		E5EBA4C22A756F8E008C629A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		E5EBA4C42A75742A008C629A /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		E5EBA4C62A757F40008C629A /* AllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishes.swift; sourceTree = "<group>"; };
+		E5EBA4CE2A7681D7008C629A /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				E5EBA4922A6EE47F008C629A /* Constants.swift */,
 				E5EBA4A82A71AB68008C629A /* UIViewController+Extensions.swift */,
 				E5EBA4AA2A71ADFE008C629A /* UINavigationController+Extentsion.swift */,
+				E5EBA4CE2A7681D7008C629A /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				E5EBA49D2A701074008C629A /* DishModel.swift in Sources */,
 				E5EBA4962A6EE52F008C629A /* CardView.swift in Sources */,
 				E5EBA4BF2A754533008C629A /* Route.swift in Sources */,
+				E5EBA4CF2A7681D7008C629A /* UserDefaults+Extensions.swift in Sources */,
 				E5502B032A6BE65900A76B71 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

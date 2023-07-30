@@ -50,6 +50,7 @@ class OnboardingViewController: UIViewController {
             let nextVC = storyboard?.instantiateViewController(withIdentifier: "HomeNC") as! UINavigationController
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .flipHorizontal
+            UserDefaults.standard.hasOnboarded = true
             present(nextVC, animated: true)
         }
         else {
@@ -76,8 +77,6 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         
         return cell
     }
-    
-    
     
     func setupCollectionView() {
         collectionView.delegate = self
