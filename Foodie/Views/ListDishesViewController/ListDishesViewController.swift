@@ -6,19 +6,13 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListDishesViewController: UIViewController {
     
     // MARK: - Variables
     var category: DishCategory!
-    var dishes: [Dish] = [
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.his is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.his is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.his is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.his is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted, man I can eat that forever and ever and ever honestly. I just love it and I always want more.", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 775),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 543),
-        .init(id: "id1", name: "Garri", description: "This is the best I have ever tasted", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 432),
-    ]
+    var dishes: [Dish] = []
     
     // MARK: - IBOutlets
 
@@ -31,10 +25,25 @@ class ListDishesViewController: UIViewController {
 
         title = category.name
         registerCells()
+        showDishList()
     }
     
     private func registerCells() {
         dishListTableView.register(UINib(nibName: DishListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DishListTableViewCell.identifier)
+    }
+    
+    private func showDishList() {
+        ProgressHUD.show()
+        NetworkingService.shared.fetchCategoryDishes(categoryId: category.id) { [weak self] result in
+            switch result {
+            case .success(let dishes):
+                ProgressHUD.dismiss()
+                self?.dishes = dishes
+                self?.dishListTableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
 
 }

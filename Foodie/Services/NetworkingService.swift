@@ -24,7 +24,7 @@ struct NetworkingService {
     }
     
     func fetchCategoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
-        
+        request(route: .fetchDishCategory(categoryId), method: .get, completion: completion)
     }
     
     private func request<T: Decodable>(route: Route,
