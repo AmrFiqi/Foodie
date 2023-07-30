@@ -1,6 +1,6 @@
 # Foodie - A Food Ordering App
 
-![Foodie App](/path/to/foodie_app_screenshot.png)
+![Foodie App](https://github.com/AmrFiqi/Foodie/blob/main/Simulator%20Screen%20Recording%20-%20iPhone%2014%20Pro%20-%202023-07-30%20at%2014.53.18.gif)
 
 Foodie is a simple and user-friendly food ordering app that allows users to explore a variety of delicious dishes from different cuisines around the world. The app offers a smooth onboarding experience, displays popular dishes, and allows users to place orders and view their order history.
 
