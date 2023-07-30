@@ -18,6 +18,11 @@ struct NetworkingService {
         request(route: .fetchAllCategories, method: .get, completion: completion)
     }
     
+    func placeOrder(dishId: String, name: String, completion: @escaping(Result<Order, Error>) -> Void) {
+        let params = ["name": name]
+        request(route: .placeOrder(dishId), method: .post, parameters: params ,completion: completion)
+    }
+    
     private func request<T: Decodable>(route: Route,
                                        method: Method,
                                        parameters: [String: Any]? = nil,
@@ -42,8 +47,6 @@ struct NetworkingService {
             }
         }.resume()
     }
-    
-    
     
     private func handleResponse<T: Decodable>(result: Result<Data, Error>?,
                                               completion: (Result<T, Error>) -> Void) {
@@ -74,6 +77,7 @@ struct NetworkingService {
             completion(.failure(error))
         }
     }
+    
     /// This is a function to generate urlRequest
     /// - Parameters:
     ///   - route: path to the resource in the backend
@@ -100,7 +104,6 @@ struct NetworkingService {
                 urlRequest.httpBody = bodyData
             }
         }
-        print(urlRequest.url)
         return urlRequest
     }
     
