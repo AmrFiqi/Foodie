@@ -33,6 +33,12 @@ class HomeViewController: UIViewController {
         setupHomeViewController()
         setupCollectionView()
         registerCells()
+        retreiveData()
+        
+    }
+    
+    private func retreiveData() {
+        ProgressHUD.show()
         NetworkingService.shared.fetchAllCategories { [weak self] (result) in
             switch result {
             case .success(let allDishes):
@@ -45,18 +51,15 @@ class HomeViewController: UIViewController {
                 self?.popularCollectionView.reloadData()
                 self?.chefCollectionView.reloadData()
             case .failure(let error):
+                ProgressHUD.dismiss()
                 ProgressHUD.showError(error.localizedDescription)
                 
             }
         }
     }
     
-    
-    func setupHomeViewController() {
+    private func setupHomeViewController() {
         title = "Foodie"
-//        let cartButton = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .plain, target: self, action: #selector(cartButtonClicked))
-//        cartButton.tintColor = .red
-//        navigationItem.rightBarButtonItem = cartButton
     }
     
     private func registerCells() {
