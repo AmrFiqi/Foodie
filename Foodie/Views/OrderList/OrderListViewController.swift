@@ -6,17 +6,13 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class OrderListViewController: UIViewController {
     
     // MARK: - Variables
     
-    var orders: [Order] = [
-        .init(id: "id", name: "Amr", dish: .init(id: "id1", name: "Carry", description: "Yummi!", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234)),
-        .init(id: "id", name: "Ahmed", dish: .init(id: "id1", name: "Sea Food", description: "Yummi!", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234)),
-        .init(id: "id", name: "Sarah", dish: .init(id: "id1", name: "Steak", description: "Yummi!", image: "https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80", calories: 234))
-        
-    ]
+    var orders: [Order] = []
     
     // MARK: - IBOutlets
     
@@ -29,10 +25,25 @@ class OrderListViewController: UIViewController {
 
         title = "Orders"
         registerCells()
+        fetchOrders()
     }
     
     private func registerCells() {
         orderListTableView.register(UINib(nibName: DishListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DishListTableViewCell.identifier)
+    }
+    
+    private func fetchOrders() {
+        ProgressHUD.show()
+        NetworkingService.shared.fetchOrders { [weak self] result in
+            switch result {
+            case .success(let orders):
+                ProgressHUD.dismiss()
+                self?.orders = orders
+                self?.orderListTableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     
 }

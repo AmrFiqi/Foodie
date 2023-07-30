@@ -9,10 +9,13 @@ import Foundation
 
 struct NetworkingService {
     
+    // MARK: - Singleton
+    
     // Create a singleton of this struct
     static let shared = NetworkingService()
     private init() {}
     
+    // MARK: - GET POST Functions to be called
     
     func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
         request(route: .fetchAllCategories, method: .get, completion: completion)
@@ -26,6 +29,12 @@ struct NetworkingService {
     func fetchCategoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
         request(route: .fetchDishCategory(categoryId), method: .get, completion: completion)
     }
+    
+    func fetchOrders(completion: @escaping(Result<[Order], Error>) -> Void) {
+        request(route: .fetchOrders, method: .get, completion: completion)
+    }
+    
+    // MARK: - Request handling functions
     
     private func request<T: Decodable>(route: Route,
                                        method: Method,
