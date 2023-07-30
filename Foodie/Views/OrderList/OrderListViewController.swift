@@ -25,6 +25,10 @@ class OrderListViewController: UIViewController {
 
         title = "Orders"
         registerCells()
+        ProgressHUD.show()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         fetchOrders()
     }
     
@@ -33,7 +37,6 @@ class OrderListViewController: UIViewController {
     }
     
     private func fetchOrders() {
-        ProgressHUD.show()
         NetworkingService.shared.fetchOrders { [weak self] result in
             switch result {
             case .success(let orders):
