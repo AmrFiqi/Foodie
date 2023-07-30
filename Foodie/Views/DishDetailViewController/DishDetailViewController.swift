@@ -38,8 +38,16 @@ class DishDetailViewController: UIViewController {
         caloriesLabel.text = dish.formattedCalories
     }
     
-    private func placeOrder() {
-        
+    private func placeOrder(name: String) {
+        ProgressHUD.show("Placing Order...")
+        NetworkingService.shared.placeOrder(dishId: dish.id ?? "", name: name) { result in
+            switch result {
+            case .success(_):
+                ProgressHUD.showSuccess("Order has been recieved 👨🏼‍🍳")
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
 
     // MARK: - IBActions
@@ -50,16 +58,8 @@ class DishDetailViewController: UIViewController {
             ProgressHUD.showError("Please enter your name")
             return
         }
-        
-        ProgressHUD.show("Placing Order...")
-        NetworkingService.shared.placeOrder(dishId: dish.id ?? "", name: name) { result in
-            switch result {
-            case .success(_):
-                ProgressHUD.showSuccess("Order has been recieved 👨🏼‍🍳")
-            case .failure(let error):
-                ProgressHUD.showError(error.localizedDescription)
-            }
-        }
+        placeOrder(name: name)
+       
     }
     
 }
