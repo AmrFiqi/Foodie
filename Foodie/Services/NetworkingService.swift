@@ -13,15 +13,15 @@ struct NetworkingService {
     static let shared = NetworkingService()
     private init() {}
     
-
+    
     func fetchAllCategories(completion: @escaping(Result<AllDishes, Error>) -> Void) {
         request(route: .fetchAllCategories, method: .get, completion: completion)
     }
     
     private func request<T: Decodable>(route: Route,
-                                     method: Method,
-                                     parameters: [String: Any]? = nil,
-                                     completion: @escaping(Result<T, Error>) -> Void) {
+                                       method: Method,
+                                       parameters: [String: Any]? = nil,
+                                       completion: @escaping(Result<T, Error>) -> Void) {
         guard let request = createRequest(route: route, method: method, paramteres: parameters) else {
             completion(.failure(AppError.unKnownError))
             return
@@ -37,13 +37,12 @@ struct NetworkingService {
                 result = .failure(error)
                 print("The error is: \(error.localizedDescription)")
             }
-            
             DispatchQueue.main.async {
                 self.handleResponse(result: result, completion: completion)
             }
         }.resume()
     }
-
+    
     
     
     private func handleResponse<T: Decodable>(result: Result<Data, Error>?,
@@ -101,6 +100,7 @@ struct NetworkingService {
                 urlRequest.httpBody = bodyData
             }
         }
+        print(urlRequest.url)
         return urlRequest
     }
     
